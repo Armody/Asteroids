@@ -44,6 +44,12 @@ def main():
             if obj.collides_with(player):
                 print("Game over!")
                 sys.exit()
+
+        for asteroid in asteroids:
+            for bullet in bullets:
+                if asteroid.collides_with(bullet):
+                    asteroid.kill()
+                    bullet.kill()
         
         pygame.display.flip()
 
